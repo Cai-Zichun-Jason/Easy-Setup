@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # --- Mihomo (Clash Core) 核心 ---
+  mihomo:
+    image: metacubex/mihomo:latest
+    container_name: mihomo
+    restart: always
+    network_mode: "host" # 强烈建议：代理软件使用 host 模式性能最好，且能处理复杂的网络流量
+    volumes:
+      - ./config.yaml:./config/config.yaml # 挂载配置文件
+      # - ./ui:/root/.config/mihomo/ui # 如果你想把 UI 放在核心里托管(可选)
+    cap_add:
+      - NET_ADMIN # 必须：赋予网络管理权限
+      - SYS_MODULE # 可选：如果需要加载内核模块
+      - SYSTEM_TIME_SET # 可选
+    environment:
+      - TZ=Asia/Shanghai
+
+  # --- Metacubexd (Web UI) 面板 ---
+  metacubexd:
+    image: ghcr.io/metacubex/metacubexd:latest
+    container_name: metacubexd
+    restart: always
+    ports:
+      - "8080:8080" # 访问 http://IP:8080 进入面板
+    # WebUI 本身是无状态的，它只是个网页，启动后去连接 9090 端口的 Mihomo
