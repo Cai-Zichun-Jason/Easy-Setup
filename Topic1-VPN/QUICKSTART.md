@@ -1,4 +1,4 @@
-# 快速入门指南
+# 快速入门使用指南
 
 ## 一键部署（3步）
 
@@ -9,7 +9,10 @@ bash check_env.sh
 # 2. 导入镜像（离线部署）
 bash loadVPNImages.sh
 
-# 3. 启动服务
+# 3. 把你的代理文件改名为config.yaml文件,放入config目录下(传文件可以用SCP/VSCODE/TERMINUS)
+mv xxxxxxx.yaml config/config.yaml
+
+# 4. 启动服务
 docker compose up -d
 ```
 
