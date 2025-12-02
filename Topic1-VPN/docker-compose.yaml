@@ -8,12 +8,12 @@ services:
     restart: always
     network_mode: "host" # 强烈建议：代理软件使用 host 模式性能最好，且能处理复杂的网络流量
     volumes:
-      - ./config.yaml:./config/config.yaml # 挂载配置文件
+      - ./config/config.yaml:/root/.config/mihomo/config.yaml # 挂载配置文件
       # - ./ui:/root/.config/mihomo/ui # 如果你想把 UI 放在核心里托管(可选)
     cap_add:
       - NET_ADMIN # 必须：赋予网络管理权限
       - SYS_MODULE # 可选：如果需要加载内核模块
-      - SYSTEM_TIME_SET # 可选
+      - SYS_TIME # 可选
     environment:
       - TZ=Asia/Shanghai
 
