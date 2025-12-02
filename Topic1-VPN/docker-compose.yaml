@@ -23,5 +23,5 @@ services:
     container_name: metacubexd
     restart: always
     ports:
-      - "8080:8080" # 访问 http://IP:8080 进入面板
+      - "8080:80" # 访问 http://IP:8080 进入面板
     # WebUI 本身是无状态的，它只是个网页，启动后去连接 9090 端口的 Mihomo
