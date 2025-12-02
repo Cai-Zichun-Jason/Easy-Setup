@@ -1,8 +1,13 @@
 # Mihomo VPN 部署指南
-
+这是一个为没有GUI界面的LINUX服务器提供翻墙的自动化部署方案。  
 基于 Mihomo (Clash Meta 内核) 的代理解决方案，提供 Metacubexd 可视化管理界面。  
 可以直接用能够用于 Clash Verge Rev 客户端的代理文件。  
-[Clash Verge Rev]{https://github.com/clash-verge-rev/clash-verge-rev/releases}
+**Clash Verge Rev**: https://github.com/clash-verge-rev/clash-verge-rev/releases   
+
+**为什么可以用?**   
+因为 Clash Verge Rev 是基于VPN内核 Clash Meta (其实就是Mihomo) 进一步开发得来的。当然有时候他们会说，Clash Verge是基于Sing内核或者Sing-Box开发而来的，不尽然，只是用了人家的库。  
+
+**发展轨迹**  : Clash Verge Rev ⬅️ Clash Verge ⬅️ Mihomo(Clash Meta内核) ⬅️ Sing-Box
 
 ---
 
