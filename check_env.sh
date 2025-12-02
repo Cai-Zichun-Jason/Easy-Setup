@@ -63,7 +63,7 @@ echo "========================================"
 # --- 输出结果 ---
 
 if [ ${#MISSING_TOOLS[@]} -eq 0 ]; then
-    echo -e "${GREEN}✅ 环境均设置完毕！${NC}"
+    echo -e "${GREEN}✅ 环境均设置完毕！1${NC}"
     exit 0
 else
     echo -e "${RED}❌ 检测到缺少以下环境，请先安装：${NC}"
